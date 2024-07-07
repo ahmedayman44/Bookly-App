@@ -1,9 +1,44 @@
+import 'package:booklly_app/Features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:booklly_app/core/utils/assets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  // SingleTickerProviderStateMixin  used to handle rate with change of values
+  // use AnimationController to control the animation but it give me value from 0 to 1 so if we want to change value that AnimationController give to me we need to put thing above AnimationController take value of AnimationController وتطلعهالك بقيم تقدر تستخدمها فعلشان نعمل كدا هننشئ الانميشن الي هنحطة فوق الAnimationController
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+
+    animationController.forward();
+  }
+
+// Always controller will make dispose to it
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +47,24 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        const Text(
-          'Read Free Books',
-          textAlign: TextAlign.center,
-        ),
+        AnimatedSlidingText(slidingAnimation: slidingAnimation),
       ],
+    );
+  }
+}
+
+class AnimatedSlidingText extends StatelessWidget {
+  const AnimatedSlidingText({
+    super.key,
+    required this.slidingAnimation,
+  });
+
+  final Animation<Offset> slidingAnimation;
+
+  @override
+  Widget build(BuildContext context) {
+    return SlidingText(
+      slidingAnimation: slidingAnimation,
     );
   }
 }
