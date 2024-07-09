@@ -5,12 +5,13 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
+
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return const  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomAppBar(),
@@ -22,6 +23,8 @@ class HomeViewBody extends StatelessWidget {
             style: Styles.titleMeduim,
           ),
         ),
+
+        //Text('data' , style: GoogleFonts.montserrat(),)
       ],
     );
   }
