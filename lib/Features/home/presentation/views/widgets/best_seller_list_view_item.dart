@@ -1,6 +1,8 @@
+import 'package:booklly_app/Features/home/presentation/views/book_rating.dart';
 import 'package:booklly_app/constants.dart';
 import 'package:booklly_app/core/utils/assets.dart';
 import 'package:booklly_app/core/utils/style.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -9,7 +11,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: SizedBox(
         height: 120,
         child: Row(
@@ -31,39 +33,45 @@ class BestSellerListViewItem extends StatelessWidget {
             const SizedBox(
               width: 30,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: Text(
-                    'Harry Potter and the Globet of Fire',
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: Styles.textStyle20.copyWith(fontFamily: kGTSectra),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    child: Text(
+                      'Harry Potter and the Globet of Fire',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: Styles.textStyle20.copyWith(fontFamily: kGTSectra),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  'J.K. Rowling',
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.grey.shade500,
+                  const SizedBox(
+                    height: 3,
                   ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                
-                Row(
-                  children: [
-                    Text('19.99 €',
-                        style: Styles.textStyle20
-                            .copyWith(fontWeight: FontWeight.bold)),
-                  ],
-                )
-              ],
+                  Text(
+                    'J.K. Rowling',
+                    style: Styles.textStyle14.copyWith(
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '19.99 €',
+                        style: Styles.textStyle20.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const BookRating(),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
