@@ -1,8 +1,7 @@
-import 'package:booklly_app/Features/home/presentation/views/widgets/book_Rating.dart';
+import 'package:booklly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:booklly_app/constants.dart';
 import 'package:booklly_app/core/utils/assets.dart';
 import 'package:booklly_app/core/utils/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {

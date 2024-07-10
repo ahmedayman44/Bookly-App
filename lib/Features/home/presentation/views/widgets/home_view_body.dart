@@ -3,9 +3,7 @@ import 'package:booklly_app/Features/home/presentation/views/widgets/custom_app_
 import 'package:booklly_app/Features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:booklly_app/core/utils/style.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
