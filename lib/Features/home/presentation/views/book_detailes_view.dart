@@ -7,7 +7,10 @@ class BookDetailesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: BookDetailesViewBody(),
+      // SafeArea Ensure that the UI starts after the status bar is shown.
+      body: SafeArea(
+        child: BookDetailesViewBody(),
+      ),
     );
   }
 }
