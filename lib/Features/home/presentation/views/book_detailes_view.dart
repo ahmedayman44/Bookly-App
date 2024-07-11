@@ -1,4 +1,4 @@
-import 'package:booklly_app/Features/home/presentation/views/widgets/book_detailes_view_body.dart';
+import 'package:booklly_app/Features/home/presentation/views/widgets/book_detaile_view_body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailesView extends StatelessWidget {
@@ -6,7 +6,7 @@ class BookDetailesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       // SafeArea Ensure that the UI starts after the status bar is shown.
       body: SafeArea(
         child: BookDetailesViewBody(),
