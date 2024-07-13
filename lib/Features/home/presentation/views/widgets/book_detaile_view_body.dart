@@ -27,8 +27,7 @@ class BookDetailesViewBody extends StatelessWidget {
                 BookDetailsSectionPartTwo(),
                 SizedBox(
                   height: 40,
-                ) ,
-                
+                ),
               ],
             ),
           ),
