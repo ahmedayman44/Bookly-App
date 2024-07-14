@@ -30,16 +30,15 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        // SliverToBoxAdapter make me forced to make shrinkWrap true  
+        // SliverToBoxAdapter make me forced to make shrinkWrap true
         // SliverToBoxAdapter(
         //   child: BestSellerListView(),
         // ),
         // so we can here used used SliverFillRemaining because it donnt forced me to make shrinkWrap true
         SliverFillRemaining(
-           child: BestSellerListView(),
+          child: BestSellerListView(),
         )
       ],
     );
   }
 }
-

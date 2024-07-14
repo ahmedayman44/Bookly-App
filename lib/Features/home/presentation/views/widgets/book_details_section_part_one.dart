@@ -4,7 +4,7 @@ import 'package:booklly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSectionPartOne extends StatelessWidget {
-  const  BookDetailsSectionPartOne({super.key});
+  const BookDetailsSectionPartOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,6 @@ class BookDetailsSectionPartOne extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-       
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.22),
           child: const CustomBookImage(),
@@ -40,7 +39,6 @@ class BookDetailsSectionPartOne extends StatelessWidget {
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
-        
       ],
     );
   }

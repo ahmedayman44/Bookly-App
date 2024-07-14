@@ -12,7 +12,7 @@ class SearchResultListView extends StatelessWidget {
         // physics:  NeverScrollableScrollPhysics() to make the list not scrollable because it's not needed customScrollView scrollable
 
         padding: EdgeInsets.zero,
-        itemCount: 10,
+        itemCount: 20,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return const Padding(
