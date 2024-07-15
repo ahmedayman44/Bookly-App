@@ -12,7 +12,7 @@ class BestSellerListView extends StatelessWidget {
         // physics:  NeverScrollableScrollPhysics() to make the list not scrollable because it's not needed customScrollView scrollable
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
-        itemCount: 20,
+        itemCount: 22,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return const Padding(
