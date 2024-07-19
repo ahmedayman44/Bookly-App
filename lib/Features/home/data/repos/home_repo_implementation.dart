@@ -1,7 +1,7 @@
 import 'package:booklly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklly_app/Features/home/data/repos/home_repo.dart';
 import 'package:booklly_app/core/utils/api_service.dart';
-import 'package:booklly_app/errors/failures.dart';
+import 'package:booklly_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
