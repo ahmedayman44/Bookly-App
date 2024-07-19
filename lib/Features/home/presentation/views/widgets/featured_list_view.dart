@@ -23,14 +23,14 @@ class FeaturedBooksListView extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: CustomBookImage(
-                      imageUrl: state.books[index].items!.first.volumeInfo
-                          .imageLinks.smallThumbnail,
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks.thumbnail,
                     ),
                   );
                 }),
           );
         } else if (state is FeaturedBooksFailure) {
-          return CustomErrorMessage(errMessage: state.errMessage);
+          return CustomErrorMessage(errorMessage: state.errMessage);
         } else {
           return const CustomLoadingIndicator();
         }
