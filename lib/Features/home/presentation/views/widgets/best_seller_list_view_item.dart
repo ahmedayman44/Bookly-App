@@ -1,10 +1,12 @@
 import 'package:booklly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:booklly_app/Features/home/presentation/manager/similer_books_cubit/similer_books_cubit.dart';
 import 'package:booklly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:booklly_app/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:booklly_app/constants.dart';
 import 'package:booklly_app/core/utils/app_router.dart';
 import 'package:booklly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
@@ -16,6 +18,9 @@ class BookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        BlocProvider.of<SimilerBooksCubit>(context).fetchSimilarBooks(
+          category: bookModel.volumeInfo.categories![0],
+        );
         GoRouter.of(context).push(
           AppRouter.kBookDetailesView,
           extra: bookModel,

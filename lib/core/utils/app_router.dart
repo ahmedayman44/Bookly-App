@@ -30,7 +30,7 @@ abstract class AppRouter {
             getIt.get<HomeRepoImplement>(),
           ),
           child: BookDetailesView(
-            // using state to send detailes to BookDetailesView when navagite to it 
+            // using state to send detailes to BookDetailesView when navagite to it
             bookModel: state.extra as BookModel,
           ),
         ),

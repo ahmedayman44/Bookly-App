@@ -15,6 +15,7 @@ class BookDetailesView extends StatefulWidget {
 class _BookDetailesViewState extends State<BookDetailesView> {
   @override
   void initState() {
+    // when navigate to book detailes view we do trigger to fetch similer books data
     BlocProvider.of<SimilerBooksCubit>(context).fetchSimilarBooks(
         category: widget.bookModel.volumeInfo.categories![0]);
     super.initState();
@@ -22,10 +23,12 @@ class _BookDetailesViewState extends State<BookDetailesView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       // SafeArea Ensure that the UI starts after the status bar is shown.
       body: SafeArea(
-        child: BookDetailesViewBody(),
+        child: BookDetailesViewBody(
+          bookModel: widget.bookModel,
+        ),
       ),
     );
   }

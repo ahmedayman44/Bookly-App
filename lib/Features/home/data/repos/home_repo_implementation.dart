@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:booklly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklly_app/Features/home/data/repos/home_repo.dart';
 import 'package:booklly_app/core/utils/api_service.dart';
@@ -22,7 +24,7 @@ class HomeRepoImplement extends HomeRepo {
           BookModel.fromJson(item),
         );
         // log('book model $books');
-        //log(item.toString());
+        // log(item.toString());
       }
       return right(books);
     } catch (e) {
@@ -68,13 +70,15 @@ class HomeRepoImplement extends HomeRepo {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free-ebooks&Sortin=relevancing&q=subject:programming',
+            'volumes?Filtering=free-ebooks&Sorting=relevance&q=Subject:$category',
       );
       List<BookModel> books = [];
 
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
+          log(item.toString());
       }
+
       return right(books);
     } catch (e) {
       if (e is DioException) {

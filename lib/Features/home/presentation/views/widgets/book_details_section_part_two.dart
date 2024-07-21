@@ -1,4 +1,3 @@
-import 'package:booklly_app/Features/home/presentation/views/widgets/book_action.dart';
 import 'package:booklly_app/Features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:booklly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +10,7 @@ class BookDetailsSectionPartTwo extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        BooksAction(),
-        SizedBox(
-          height: 32,
-        ),
+       
         Text(
           'You can also like',
           style: Styles.textStyle14,
