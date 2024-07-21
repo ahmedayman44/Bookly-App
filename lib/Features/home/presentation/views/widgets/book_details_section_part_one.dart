@@ -42,6 +42,7 @@ class BookDetailsSectionPartOne extends StatelessWidget {
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
+        
       ],
     );
   }

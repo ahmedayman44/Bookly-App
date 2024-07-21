@@ -12,19 +12,22 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // CustomScrollView is used to make all app scroll
-    return const CustomScrollView(
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBar(),
-              FeaturedBooksListView(),
+              const CustomAppBar(),
+              const FeaturedBooksListView(),
               Padding(
-                padding: EdgeInsets.only(left: 24.0, top: 20, bottom: 20),
+                padding: const EdgeInsets.only(left: 24.0, top: 20, bottom: 20),
                 child: Text(
-                  'Best Seller',
-                  style: Styles.textStyle18,
+                  'Newest Books',
+                  style: Styles.textStyle18.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -35,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
         //   child: BestSellerListView(),
         // ),
         // so we can here used used SliverFillRemaining because it donnt forced me to make shrinkWrap true
-        SliverFillRemaining(
+        const SliverFillRemaining(
           child: BestSellerListView(),
         )
       ],
