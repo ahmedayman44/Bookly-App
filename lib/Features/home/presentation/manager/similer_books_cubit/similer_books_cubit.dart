@@ -14,7 +14,7 @@ class SimilerBooksCubit extends Cubit<SimilerBooksState> {
     emit(SimilerBooksLoading());
     var result = await homeRepo.fetchSimilarBooks(category: category);
     result.fold((failure) {
-      emit(SimilerBooksInfoFailure(failure.errMessage));
+      emit(SimilerBooksFailure(failure.errMessage));
     }, (books) {
       emit(SimilerBooksSuccess(books));
     });

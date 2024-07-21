@@ -17,8 +17,8 @@ final class SimilerBooksSuccess extends SimilerBooksState {
   const SimilerBooksSuccess(this.books);
 }
 
-final class SimilerBooksInfoFailure extends SimilerBooksState {
+final class SimilerBooksFailure extends SimilerBooksState {
   final String errMessage;
 
-  const SimilerBooksInfoFailure(this.errMessage);
+  const SimilerBooksFailure(this.errMessage);
 }
