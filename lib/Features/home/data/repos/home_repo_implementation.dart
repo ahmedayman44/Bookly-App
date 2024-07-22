@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:booklly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:booklly_app/core/models/book_model/book_model.dart';
 import 'package:booklly_app/Features/home/data/repos/home_repo.dart';
 import 'package:booklly_app/core/utils/api_service.dart';
 import 'package:booklly_app/core/errors/failures.dart';
@@ -24,7 +24,7 @@ class HomeRepoImplement extends HomeRepo {
           BookModel.fromJson(item),
         );
         
-         log(item.toString());
+       // log(item.toString());
       }
       return right(books);
     } catch (e) {
