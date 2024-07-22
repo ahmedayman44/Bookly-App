@@ -23,8 +23,8 @@ class HomeRepoImplement extends HomeRepo {
         books.add(
           BookModel.fromJson(item),
         );
-        // log('book model $books');
-        // log(item.toString());
+        
+         log(item.toString());
       }
       return right(books);
     } catch (e) {
